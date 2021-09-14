@@ -14,17 +14,20 @@ public class ex14 {
 
         System.out.print("What is the order amount? ");
         double inAmount = roundWholeCent(inScan.nextDouble());
+
         System.out.print("What is the state? ");
         String state = inScan.next().toLowerCase();
+        String answer = "";
 
         if(state.equals("wi") || state.equals("wisconsin")){
             System.out.printf("The subtotal is $%.2f.\n", inAmount);
             double tax = roundWholeCent(inAmount * WITAX);
-            System.out.printf("The tax is $%.2f.\n", tax);
+            answer = String.format("The tax is $%.2f.\n", tax);
             inAmount += tax;
         }
 
-        System.out.printf("The total is $%.2f.", inAmount);
+        answer = answer + String.format("The total is $%.2f.",inAmount);
+        System.out.println(answer);
     }
 
     public static double roundWholeCent(double value){
