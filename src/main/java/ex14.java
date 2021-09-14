@@ -20,9 +20,9 @@ public class ex14 {
         String answer = "";
 
         if(state.equals("wi") || state.equals("wisconsin")){
-            System.out.printf("The subtotal is $%.2f.\n", inAmount);
+            answer = String.format("The subtotal is $%.2f.\n", inAmount);
             double tax = roundWholeCent(inAmount * WITAX);
-            answer = String.format("The tax is $%.2f.\n", tax);
+            answer = answer + String.format("The tax is $%.2f.\n", tax);
             inAmount += tax;
         }
 
